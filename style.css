@@ -101,3 +101,12 @@ body{
 .display-flex-class{
     display: flex;
 }
+
+/* ----------------------
+    SECTION
+---------------------- */
+section{
+    width: 100%;
+    height: 100%;
+}
+
