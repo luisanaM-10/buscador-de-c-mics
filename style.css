@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgb(241, 239, 228);
+    background-color: rgb(215, 214, 205);
     width: 100%;
     height: 110vh;
 }
@@ -109,8 +109,6 @@ section{
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color:blueviolet;
-    
 }
 
 .container-section{
@@ -118,5 +116,22 @@ section{
     flex-wrap: wrap;
     display: flex;
     justify-content: center; 
-    background-color: brown;
 }
+
+
+/* CARDS */
+.cards{
+    margin: 2%;
+    width: 250px;
+}
+
+.cards:hover{
+    color: rgb(5, 22, 253);
+    font-size: 700;
+    transform: scale(1.1);
+}
+
+.img-cards{
+    max-width: 250px;
+}
+
