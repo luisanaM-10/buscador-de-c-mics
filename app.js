@@ -44,13 +44,44 @@ const printComic = async() => {
 }
 printComic()
 
+
+// Función para obtener los personajes
+const getMarvelCharacters = async() => {
+    const url = `${urlBase}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&offset=${offset}`;
+    const data = await fetchURL(url)
+    const results = data.data.results
+    return results
+}
+getMarvelCharacters()
+
+// Función que pinta las Cards
+const printCharacters = async() => {
+    const characters = await getMarvelCharacters();
+    $('container-section').innerHTML = ``;
+    for (let character of characters) {
+        $('container-section').innerHTML += `
+        <div class="cards">
+                <div>
+                    <div>
+                        <img src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="" class="img-cards"
+                    </div>
+                </div>
+                <div>
+                    <h4>Nombre:</h4>
+                    <p>${character.name}</p>
+                </div>
+        </div>
+        `    
+    }
+}
+printCharacters()
+
+
 // PAGINADOR 
 $('prev-page').onclick = function (e) {
     offset -= 20;
-    printComic();
 };
   
 $('new-page').onclick = function (e) {
     offset += 20;
-    printComic();
 };
